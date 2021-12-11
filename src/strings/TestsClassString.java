@@ -90,11 +90,13 @@ class TestsClassString {
 	@Test
 	void testSubstringInt() {
 		assertEquals("hello, World!", str.substring(7));
+		// V.R. The cases str.substring(-5) and str.substring(77) aren't checked
 	}
 
 	@Test
 	void testSubstringIntInt() {
 		assertEquals("hello", str.substring(7, 12));
+		// V.R. The cases str.substring(-5, 3) and str.substring(3, 77) aren't checked
 	}
 
 	@Test

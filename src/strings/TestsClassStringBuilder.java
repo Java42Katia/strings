@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+// V.R. OK
 class TestsClassStringBuilder {
 	StringBuilder strBuilder = new StringBuilder("StringBuilder");
 	
