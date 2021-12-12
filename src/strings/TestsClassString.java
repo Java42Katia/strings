@@ -90,11 +90,35 @@ class TestsClassString {
 	@Test
 	void testSubstringInt() {
 		assertEquals("hello, World!", str.substring(7));
+		try {
+			String t = str.substring(-5);
+			fail("There should be IndexOutOfException");
+		} catch (IndexOutOfBoundsException e) {
+			
+		}
+		try {
+			String t = str.substring(77);
+			fail("There should be IndexOutOfException");
+		} catch (IndexOutOfBoundsException e) {
+			
+		}
 	}
 
 	@Test
 	void testSubstringIntInt() {
 		assertEquals("hello", str.substring(7, 12));
+		try {
+			String t = str.substring(-5, 3);
+			fail("There should be IndexOutOfException");
+		} catch (IndexOutOfBoundsException e) {
+		
+		}
+		try {
+			String t = str.substring(3, 77);
+			fail("There should be IndexOutOfException");
+		} catch (IndexOutOfBoundsException e) {
+			
+		}	
 	}
 
 	@Test
