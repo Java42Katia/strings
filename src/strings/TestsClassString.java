@@ -11,7 +11,6 @@ class TestsClassString {
 	
 	final static String str = "Hello, hello, World!";
 
-
 	@BeforeEach
 	void setUp() throws Exception {
 	}
