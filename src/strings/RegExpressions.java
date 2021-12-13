@@ -15,7 +15,7 @@ public static String lessEqual300() {
  */
 public static String ipV4Part() {
 	
-	return "[0]\\d?\\d?|[01]\\d{2}|2[0-4]\\d|25[0-5]";
+	return "\\d\\d?|[01]\\d{2}|2[0-4]\\d|25[0-5]";
 }
 /**
  * 
@@ -52,8 +52,7 @@ public static String mobileIsraelPhone() {
  * each part is the  regex of String ipV4Part()
  */
 public static String ipV4() {
-	System.out.println( "(" + ipV4Part() + "[\\.$]){4}");
-	 return "(" + ipV4Part() + "[\\.$]){4}";
+	 return ".*";
 }
 
 
