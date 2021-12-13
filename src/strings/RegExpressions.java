@@ -15,7 +15,7 @@ public static String lessEqual300() {
  */
 public static String ipV4Part() {
 	
-	return "\\d\\d?|[01]\\d{2}|2[0-4]\\d|25[0-5]";
+	return "[0]\\d?\\d?|[01]\\d{2}|2[0-4]\\d|25[0-5]";
 }
 /**
  * 
@@ -39,8 +39,11 @@ public static String arithmeticExpression() {
  * 7 digits that may or may not be separated by dash
  */
 public static String mobileIsraelPhone() {
-	//TODO
-	return "";
+	String code = "((\\+972)|0)";
+	String prefix = "(5[0-9]|7[2-7])";
+	String delimiter = "(-?|\\s*)";
+	String number = "(" + delimiter + "\\d)";
+	return String.format("%1$s%2$s%3$s%4$s{7}", code, delimiter, prefix, number);
 }
 /**
  * 
@@ -49,8 +52,9 @@ public static String mobileIsraelPhone() {
  * each part is the  regex of String ipV4Part()
  */
 public static String ipV4() {
-	//TODO
-	 return "";
+	System.out.println( "(" + ipV4Part() + "[\\.$]){4}");
+	 return "(" + ipV4Part() + "[\\.$]){4}";
 }
+
 
 }

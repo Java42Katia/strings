@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static strings.RegExpressions.*
-;class RegExpressionsTest {
+;
+
+import java.util.Arrays;class RegExpressionsTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -135,30 +137,27 @@ import static strings.RegExpressions.*
 	}
 
 	private String getStringWithoutSpaces(String str) {
-		// TODO write this method based on the method replaceAll of the class String
-		return null;
+		return str.replaceAll("\\s+", "");
 	}
 	@Test
 	void splitTest () {
 		String expr = " 20 +10 * 2	/100 +4     ";
 		String [] operatorsExp = {"", "+", "*", "/", "+"};
-		assertEquals(operatorsExp, getOperatorsExpression(expr));
+		// [Katia] - changed assertEquals() to assertArrayEquals()
+//		assertEquals(operatorsExp, getOperatorsExpression(expr)); 
+		assertArrayEquals(operatorsExp, getOperatorsExpression(expr));
 		String [] operandsExp = {"20", "10", "2", "100", "4"};
-		assertEquals(operandsExp, getOperandsExpression(expr));
+		// [Katia] - changed assertEquals() to assertArrayEquals()
+//		assertEquals(operandsExp, getOperandsExpression(expr));
+		assertArrayEquals(operandsExp, getOperandsExpression(expr));
 	}
 
-	private Object getOperandsExpression(String expr) {
-		// TODO the method returns array of strings containing only the operands of the given expression
-		// see test. Based on the method split of the class String
-		return null;
+	private String[] getOperandsExpression(String expr) { // [Katia] - changed Object to String[]
+		return getStringWithoutSpaces(expr).split("[+*/-]");
 	}
 
 	private String[] getOperatorsExpression(String expr) {
-		// TODO the method returns array of strings containing the operators of the given expression
-		// with empty string as the first string (see test)
-		//based on the method split of the class String
-		return null;
+		return getStringWithoutSpaces(expr).split("\\d{1,}");
 	}
-	
 
 }

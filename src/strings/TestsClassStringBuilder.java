@@ -6,12 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestsClassStringBuilder {
-	StringBuilder strBuilder = new StringBuilder("StringBuilder");
-	
-	@BeforeEach
-	void setUp() throws Exception {
-		strBuilder = new StringBuilder("StringBuilder");
-	}
 
 StringBuilder strBuilder;
 	
@@ -56,10 +50,6 @@ StringBuilder strBuilder;
 	@Test
 	void testReverse() {
 		assertEquals("redliuBgnirtS", strBuilder.reverse().toString());
-<<<<<<< HEAD
-=======
-		
->>>>>>> origin
 	}
 
 }
