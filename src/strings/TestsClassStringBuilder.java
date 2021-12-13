@@ -13,6 +13,13 @@ class TestsClassStringBuilder {
 		strBuilder = new StringBuilder("StringBuilder");
 	}
 
+StringBuilder strBuilder;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		strBuilder = new StringBuilder("StringBuilder");
+	}
+
 	@Test
 	void testAppendString() {
 		assertEquals("StringBuilderClass", strBuilder.append("Class").toString());
@@ -49,6 +56,10 @@ class TestsClassStringBuilder {
 	@Test
 	void testReverse() {
 		assertEquals("redliuBgnirtS", strBuilder.reverse().toString());
+<<<<<<< HEAD
+=======
+		
+>>>>>>> origin
 	}
 
 }
