@@ -133,7 +133,7 @@ import java.util.Arrays;class RegExpressionsTest {
 		String actual = getStringWithoutSpaces(expr);
 		String expected = "20+10*2/100+4";
 		assertEquals(expected, actual);
-		
+		// V.R The case with PatternSyntaxException is skipped		
 	}
 
 	private String getStringWithoutSpaces(String str) {
@@ -150,7 +150,7 @@ import java.util.Arrays;class RegExpressionsTest {
 		// [Katia] - changed assertEquals() to assertArrayEquals()
 //		assertEquals(operandsExp, getOperandsExpression(expr));
 		assertArrayEquals(operandsExp, getOperandsExpression(expr));
-	}
+		// V.R The case with PatternSyntaxException is skipped	}
 
 	private String[] getOperandsExpression(String expr) { // [Katia] - changed Object to String[]
 		return getStringWithoutSpaces(expr).split("[+*/-]");

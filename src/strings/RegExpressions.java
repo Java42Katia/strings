@@ -39,10 +39,19 @@ public static String arithmeticExpression() {
  * 7 digits that may or may not be separated by dash
  */
 public static String mobileIsraelPhone() {
+	/* V.R.
+	 * The names of variables may be more clear. For example
+	 * areaCode, providerCode and customer number
+	 */
 	String code = "((\\+972)|0)";
 	String prefix = "(5[0-9]|7[2-7])";
 	String delimiter = "(-?|\\s*)";
 	String number = "(" + delimiter + "\\d)";
+	/* V.R. The following is simpler and shorter
+	 * return String.format("%s%s%s%s{7}", code, delimiter, prefix, number);
+	 * Each of parameters is used once only. That is why it isn't necessary 
+	 * to use its order number
+	 */
 	return String.format("%1$s%2$s%3$s%4$s{7}", code, delimiter, prefix, number);
 }
 /**
@@ -52,6 +61,9 @@ public static String mobileIsraelPhone() {
  * each part is the  regex of String ipV4Part()
  */
 public static String ipV4() {
+	/* V.R. It is the same without order number. Like following
+	 *  return String.format("((%s)(\\.|\\b)){4}+(?<!\\.)$", ipV4Part());
+	 */
 	 return String.format("((%1$s)(\\.|\\b)){4}+(?<!\\.)$", ipV4Part());
 }
 
