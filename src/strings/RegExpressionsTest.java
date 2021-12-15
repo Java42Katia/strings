@@ -153,10 +153,12 @@ import java.util.Arrays;class RegExpressionsTest {
 	}
 
 	private String[] getOperandsExpression(String expr) { // [Katia] - changed Object to String[]
+	//[YG] - not flexible. In the case of updating operators in an arithmetic expression, this code should be updated as well
 		return getStringWithoutSpaces(expr).split("[+*/-]");
 	}
 
 	private String[] getOperatorsExpression(String expr) {
+	//[YG] better to use \\d+ than {1, }
 		return getStringWithoutSpaces(expr).split("\\d{1,}");
 	}
 
