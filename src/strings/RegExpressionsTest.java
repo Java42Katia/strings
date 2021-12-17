@@ -7,7 +7,8 @@ import org.junit.jupiter.api.Test;
 import static strings.RegExpressions.*
 ;
 
-import java.util.Arrays;class RegExpressionsTest {
+import java.util.Arrays;
+class RegExpressionsTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
