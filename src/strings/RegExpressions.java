@@ -39,11 +39,17 @@ public static String arithmeticExpression() {
  * 7 digits that may or may not be separated by dash
  */
 public static String mobileIsraelPhone() {
+
 	String code = "((\\+972)|0)";
 	String prefix = "(5[0-9]|7[2-7])";
 	String delimiter = "(-?|\\s*)";
 	String number = "(" + delimiter + "\\d)";
 	return String.format("%1$s%2$s%3$s%4$s{7}", code, delimiter, prefix, number);
+
+	  
+      
+//      return "(\\+972\\s*-?|0)(5\\d|7[2-7])(-?\\d){7}";
+
 }
 /**
  * 
@@ -53,6 +59,10 @@ public static String mobileIsraelPhone() {
  */
 public static String ipV4() {
 	 return String.format("((%1$s)(\\.|$)){4}+(?<!\\.)$", ipV4Part());
+
+	
+//	return String.format("((%1$s)\\.){3}(%1$s)", ipV4Part());
+
 }
 
 

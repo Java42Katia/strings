@@ -101,6 +101,8 @@ import java.util.Arrays;class RegExpressionsTest {
 		assertFalse("...".matches(ipV4()));
 		assertFalse(".100.200.".matches(ipV4()));
 		assertFalse("255,255,255,255".matches(ipV4()));
+		assertFalse("100.100.100.100.".matches(ipV4()));
+
 	}
 	@Test
 	void mobileIsraelTrueTest() {
@@ -143,6 +145,7 @@ import java.util.Arrays;class RegExpressionsTest {
 	void splitTest () {
 		String expr = " 20 +10 * 2	/100 +4     ";
 		String [] operatorsExp = {"", "+", "*", "/", "+"};
+
 		// [Katia] - changed assertEquals() to assertArrayEquals()
 //		assertEquals(operatorsExp, getOperatorsExpression(expr)); 
 		assertArrayEquals(operatorsExp, getOperatorsExpression(expr));
@@ -158,6 +161,24 @@ import java.util.Arrays;class RegExpressionsTest {
 
 	private String[] getOperatorsExpression(String expr) {
 		return getStringWithoutSpaces(expr).split("\\d{1,}");
+//
+//		assertArrayEquals(operatorsExp, getOperatorsExpression(expr));
+//		String [] operandsExp = {"20", "10", "2", "100", "4"};
+//		assertArrayEquals(operandsExp, getOperandsExpression(expr));
+//	}
+//
+//	private String[] getOperandsExpression(String expr) {
+//		// TODO the method returns array of strings containing only the operands of the given expression
+//		// see test. Based on the method split of the class String
+//		expr = expr.trim();
+//		return expr.split("\\D+");
+//	}
+//
+//	private String[] getOperatorsExpression(String expr) {
+//		// TODO the method returns array of strings containing the operators of the given expression
+//		// with empty string as the first string (see test)
+//		//based on the method split of the class String
+//		return expr.split("[\\d\\s]+");
 	}
 
 }
