@@ -122,7 +122,7 @@ import java.util.Arrays;class RegExpressionsTest {
 		//7 digits that may or may not be separated by dash
 		
 		assertFalse("+972-0541234567".matches(mobileIsraelPhone()));
-		assertFalse("+9720541234567".matches(mobileIsraelPhone()));
+		assertFalse("+972541234567-".matches(mobileIsraelPhone()));
 		assertFalse("972-541234567".matches(mobileIsraelPhone()));
 		assertFalse("0641234567".matches(mobileIsraelPhone()));
 		assertFalse("+972-54123v567".matches(mobileIsraelPhone()));

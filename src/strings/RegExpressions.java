@@ -52,7 +52,7 @@ public static String mobileIsraelPhone() {
  * each part is the  regex of String ipV4Part()
  */
 public static String ipV4() {
-	 return String.format("((%1$s)(\\.|\\b)){4}+(?<!\\.)$", ipV4Part());
+	 return String.format("((%1$s)(\\.|$)){4}+(?<!\\.)$", ipV4Part());
 }
 
 
