@@ -43,12 +43,16 @@ public static int parseIntDecimal(String decString) {
 	return res;
 }
 public String toSecretString(int num) {
-	//TODO
-	return "";
+	String secretStr = Integer.toString(num, secret.length());
+	StringBuilder strBuilder = new StringBuilder();
+	for (int i = 0; i < secretStr.length(); i++) {
+		strBuilder.append(secret.charAt(Integer.parseInt(String.valueOf(secretStr.charAt(i)))));
+	}
+	return strBuilder.toString();
 }
 public boolean matches(String code, String decString) {
 	//TODO
-	return false;
+	return code.equals(toSecretString(Integer.parseInt(decString)));
 }
 
 
