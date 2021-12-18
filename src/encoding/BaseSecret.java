@@ -3,6 +3,13 @@ package encoding;
 public class BaseSecret {
 	private String secret;
 public void setSecret(String secret) {
+	/* V.R. The input string may be invalid in following 2 cases:
+	 *  1. The length of the string is less than 2
+	 *  2. The symbols (in the string) aren't unique
+	 *  In both of these cases the methods toSecretString() and  matches() cannot be used.
+	 *  What to do?
+	 *  
+	 */
 		this.secret = secret;
 		
 	}
@@ -43,6 +50,12 @@ public static int parseIntDecimal(String decString) {
 	return res;
 }
 public String toSecretString(int num) {
+	/* V.R. This method cannot be called in the following cases:
+	 * 1. The string secret is invalid
+	 * 2. The method setSecret() wasn't called before and
+	 * the string secret=null is still invalid
+	 * What to do?
+	 */
 	String secretStr = Integer.toString(num, secret.length());
 	StringBuilder strBuilder = new StringBuilder();
 	for (int i = 0; i < secretStr.length(); i++) {
@@ -51,6 +64,12 @@ public String toSecretString(int num) {
 	return strBuilder.toString();
 }
 public boolean matches(String code, String decString) {
+	/* V.R. This method cannot be called in the following cases:
+	 * 1. The string secret is invalid
+	 * 2. The method setSecret() wasn't called before and
+	 * the string secret=null is still invalid
+	 * What to do?
+	 */
 	return code.equals(toSecretString(Integer.parseInt(decString)));
 }
 

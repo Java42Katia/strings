@@ -34,6 +34,10 @@ class BaseSecretTest {
 	@Test
 	void testToSecretString() {
 		bs.setSecret(".-"); 
+		/* V.R. 
+		 *  What to do in case of invalid input string?
+		 *  How to prevent the calling of toSecretString()?
+		 */
 		assertEquals("-..", bs.toSecretString(4));
 		
 	}
@@ -41,6 +45,10 @@ class BaseSecretTest {
 	@Test
 	void testMatches() {
 		bs.setSecret("()");
+		/* V.R. 
+		 *  What to do in case of invalid input string?
+		 *  How to prevent the calling of matches()?
+		 */
 		assertTrue(bs.matches(")((", "4"));
 	}
 
