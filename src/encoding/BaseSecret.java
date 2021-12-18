@@ -51,7 +51,6 @@ public String toSecretString(int num) {
 	return strBuilder.toString();
 }
 public boolean matches(String code, String decString) {
-	//TODO
 	return code.equals(toSecretString(Integer.parseInt(decString)));
 }
 
