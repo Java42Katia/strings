@@ -37,6 +37,16 @@ class BaseSecretTest {
 		assertEquals("-..", bs.toSecretString(4));
 		
 	}
+	@Test
+	void testSetSecretException() {
+		boolean flException = false;
+		try {
+			bs.setSecret("abcdefrtg56$3wea");
+		} catch (IllegalArgumentException e) {
+			flException = true;
+		}
+		assertTrue(flException);
+	}
 
 	@Test
 	void testMatches() {
